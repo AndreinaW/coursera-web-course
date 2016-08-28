@@ -15,7 +15,7 @@ body {
 
 .navbar-brand h1 { /* Company name */
   font-size: 1.5em;
-  margin: 0 0 0 30px;
+  margin: 0;
   line-height: .75;
   color: #D81B60;
   font-weight: bolder;
@@ -44,17 +44,38 @@ body {
 
 
 /* MAIN CONTENT */
-#main-content {
-  margin: 0 30px 30px;
-
-}
 #main-content h2 {
   margin-bottom: 30px;
 }
-
-#main-section {
+#main-content .row > div {
+  margin-bottom: 20px;
+}
+.main-tile {
   background-color: #f8bbd0;
   border-radius: 10px;
   border: 2px solid #ec407a;
+  padding: 0 15px 10px;
+  position: relative;
+}
+.main-tile a {
+  position: absolute;
+  bottom: 10px;
+  right: 15px; 
+}
+.main-tile p:nth-last-child(2) {
+  margin-bottom: 30px;
 }
 /* END MAIN CONTENT */
+
+
+
+/**************** Medium & large devices only **********************/
+/* Para que en esas vistas las columnas sean de la misma altura */
+@media (min-width: 992px) {
+  #main-content .row {
+    display: flex;
+  }
+  .main-tile {
+    height: 100%;
+  }  
+}
